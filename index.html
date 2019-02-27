@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8"/>
 		<title>Puzzles</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/puzzleStyles.css" />
@@ -19,10 +20,10 @@
 
 		<main>
 			<div id="playSpace">
-			<h4 id='date'><script async src="./javascript/index.js"></script></h4>
+			<h4 id='date'><script>document.getElementById('date').innerHTML = new Date().toDateString();</script></h4>
 			<hr />
 				<div id="activePuzzle" style="padding: 5px;">
-					<h3 id="imgTitle"></h3> <hr />
+					<h3 id="imgTitle">#imageTitle</h3> <hr />
 					<div style="display: inline-block; margin: auto; width: 95%; vertical-align: top;">
 						<ul id="sortable" class="sortable"></ul>
 						<div id="refImgBox">
@@ -32,7 +33,7 @@
 							<div id="time">
 								Time Elapsed: <span id="timerPanel"></span> secs
 							</div>
-							<img id="refImg" />
+							<img id="refImg" src="#refImg" alt="#imgTitle">
 							<p id="difficulty">
 								<input type="radio" name="difficulty" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
 								<input type="radio" name="difficulty" id="medium" value="4" /> <label for="medium">Medium</label>
@@ -61,8 +62,9 @@
     			<script>
     				var images = [
     					{ src: 'images/bird.jpg', title: 'Bird' },
-    					{ src: 'images/forest.jpg', title: 'forest' },
-    					{ src: 'images/mountain.jpg', title: 'mountain' }
+    					{ src: 'images/forest.jpg', title: 'Forest' },
+    					{ src: 'images/mountain.jpg', title: 'Mountain' }
+    					{ src: 'images/majesticLizard.jpg', title: 'Majestic Lizard' }
     				];
 
     				$(function () {
@@ -82,6 +84,7 @@
 		                alert('Click and drag to arrange the pieces of the picture to recreate the image on the right.');
 		            }
     			</script>
+    		</div>
 		</main>
 		
 		<footer>
